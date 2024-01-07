@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "images": {
+    "Test Image 2.png": {
+      "enabled": true,
+      "intensity": 20.0,
+      "duration": 1.0,
+      "threshold": 0.7,
+      "cooldown": 30.0
+    },
+    "Test Image 1.png": {
+      "enabled": true,
+      "intensity": 30.0,
+      "duration": 2.0,
+      "threshold": 0.8,
+      "cooldown": 20.0
+    }
+  }
+}
