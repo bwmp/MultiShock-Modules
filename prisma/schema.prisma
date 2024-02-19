@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -16,12 +16,12 @@ model Account {
   type              String
   provider          String
   providerAccountId String
-  refresh_token     String? @db.Text
-  access_token      String? @db.Text
+  refresh_token     String?
+  access_token      String?
   expires_at        Int?
   token_type        String?
   scope             String?
-  id_token          String? @db.Text
+  id_token          String?
   session_state     String?
   user              User    @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -44,7 +44,6 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
-  Server        Server[]
 }
 
 model VerificationToken {
@@ -53,23 +52,4 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
-}
-
-model Server {
-  id           String   @id @default(cuid())
-  name         String
-  description  String
-  website      String?
-  tags         String?
-  banner       String?
-  version      String
-  ip           String
-  port         Int?     @default(25565)
-  votifierIp   String?  @default("")
-  votifierPort Int?     @default(8192)
-  userId       String
-  votes        Int?     @default(0)
-  createdAt    DateTime @default(now())
-  totalVotes   Int?     @default(0)
-  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

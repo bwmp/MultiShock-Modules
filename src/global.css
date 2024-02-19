@@ -41,34 +41,6 @@ main {
   margin-top: 56px;
 }
 
-.font-mc {
-  font-family: MinecraftRegular, MinecraftRus;
-}
-
-.font-mc-bold {
-  font-family: MinecraftBold, MinecraftRus;
-  font-weight: bold;
-}
-
-.font-mc-italic {
-  font-family: MinecraftItalic, MinecraftRus;
-  font-style: italic;
-}
-
-.font-mc-bold-italic {
-  font-family: MinecraftBoldItalic, MinecraftRus;
-  font-style: italic;
-  font-weight: bold;
-}
-
-.strikethrough {
-  text-decoration-line: line-through;
-}
-
-.underline-strikethrough {
-  text-decoration-line: underline line-through;
-}
-
 * {
   scroll-behavior: smooth;
   touch-action: manipulation;
@@ -80,10 +52,12 @@ main {
   -webkit-appearance: none;
   width: 8px;
 }
+
 *::-webkit-scrollbar-track {
   background-color: #1E2837;
   border-radius: 3px;
 }
+
 *::-webkit-scrollbar-thumb {
   background-color: #ffffff20;
   border-radius: 2px;
@@ -111,18 +85,24 @@ main {
 
 
 @keyframes fade-in {
-  from { opacity: 0; }
+  from {
+    opacity: 0;
+  }
 }
 
 @keyframes fade-out {
-  to { opacity: 0; }
+  to {
+    opacity: 0;
+  }
 }
+
 @keyframes slide-from-top {
   from {
     transform: translateY(30px);
     scale: 0.95;
   }
 }
+
 @keyframes slide-to-bottom {
   to {
     transform: translateY(-30px);
@@ -155,11 +135,30 @@ main {
   border-width: 1px;
 }
 
-.-animation-delay-5 { animation-delay: -5s; }
-.-animation-delay-10 { animation-delay: -10s; }
+.-animation-delay-5 {
+  animation-delay: -5s;
+}
 
-.animation-delay-100 { animation-delay: 100ms; }
-.animation-delay-200 { animation-delay: 200ms; }
-.animation-delay-300 { animation-delay: 300ms; }
-.animation-delay-400 { animation-delay: 400ms; }
-.animation-delay-500 { animation-delay: 500ms; }
+.-animation-delay-10 {
+  animation-delay: -10s;
+}
+
+.animation-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-500 {
+  animation-delay: 500ms;
+}

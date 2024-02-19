@@ -10,8 +10,8 @@ export const RouterHead = component$(() => {
 
   return (
     <>
-      <title>{`Birdflop: ${head.title}`}</title>
-      <meta content={`Birdflop: ${head.title}`} property="og:title"/>
+      <title>{`MultiShock: ${head.title}`}</title>
+      <meta content={`MultiShock: ${head.title}`} property="og:title"/>
       <meta content="#54a5da" name="theme-color"/>
       <meta content="/icon-512x512.png" property="og:image" />
 
