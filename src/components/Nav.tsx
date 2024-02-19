@@ -2,9 +2,9 @@
 
 import { component$, Slot, useStore } from '@builder.io/qwik';
 import { Link, useLocation } from '@builder.io/qwik-city';
+import { LoadingIcon } from '@luminescent/ui';
 
 import { ChevronDown, LogoDiscord, LogoGithub, Menu } from 'qwik-ionicons';
-import LoadingIcon from './icons/LoadingIcon';
 
 import { useAuthSession } from '~/routes/plugin@auth';
 

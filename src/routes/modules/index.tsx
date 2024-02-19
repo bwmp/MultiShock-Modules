@@ -1,27 +1,44 @@
-import { component$ } from '@builder.io/qwik';
-import { Link, type DocumentHead } from '@builder.io/qwik-city';
-
-import { CashOutline, CubeOutline } from 'qwik-ionicons';
-
+import { Resource, component$, useResource$ } from '@builder.io/qwik';
+import { type DocumentHead } from '@builder.io/qwik-city';
+import { Card, CardHeader } from '@luminescent/ui';
 export default component$(() => {
+
+  const modules = useResource$(async ({ cleanup }) => {
+    const abortController = new AbortController();
+    cleanup(() => abortController.abort('cleanup'));
+    const res = await fetch('http://localhost:3000/api/v2/modules', {
+      signal: abortController.signal,
+    });
+    const data = await res.json();
+    return data;
+  });
 
   return <>
     <section class="flex mx-auto max-w-7xl px-6 items-center justify-center min-h-[calc(100dvh-56px)]">
       <div class="text-center justify-center flex relative align-center w-full">
-        <div class="flex flex-col gap-2 sm:gap-6 w-full px-4">
-          <h1 class="text-gray-100 text-3xl sm:text-6xl font-bold fade-in animation-delay-200">
-            MultiShock Modules
-          </h1>
-          <div class="flex flex-col gap-2 mt-8 fade-in animation-delay-400">
-            <div class="flex flex-col sm:flex-row gap-2 justify-center">
-              <a href="https://paypal.me/akiradev" class="flex transition ease-in-out rounded-xl shadow-lg backdrop-blur-lg bg-pink-900/80 hover:bg-pink-700 px-6 py-3 text-pink-100 md:py-4 md:px-8 text-sm md:text-lg whitespace-nowrap gap-5 items-center">
-                <CashOutline width="30" class="text-3xl" /> Donate
-              </a>
-              <Link href="/modules" class="flex transition ease-in-out rounded-xl shadow-lg backdrop-blur-lg bg-purple-700/80 hover:bg-purple-700 px-6 py-3 text-pink-100 md:py-4 md:px-8 text-sm md:text-lg whitespace-nowrap gap-5 items-center">
-                <CubeOutline width="30" class="text-3xl" /> Modules
-              </Link>
-            </div>
-          </div>
+        <div class="grid grid-cols-3 gap-4 w-full px-4">
+          <Resource
+            value={modules}
+            onPending={() => <span class="flex-1 ml-3">Loading...</span>}
+            onRejected={() => <span class="flex-1 ml-3">Error</span>}
+            onResolved={(modules) => {
+              return <>
+                {
+                  modules.map((module: any, i: number) => {
+                    return (
+                      <Card key={i} color="blue" hoverable blobs style={{ width: '300px' }} href={'/modules/' + module.name}>
+                        <CardHeader>
+                          {module.name} - {module.author}
+                        </CardHeader>
+                        <br />
+                        {module.description}
+                      </Card>
+                    );
+                  })
+                }
+              </>;
+            }}
+          />
         </div>
       </div>
     </section>
