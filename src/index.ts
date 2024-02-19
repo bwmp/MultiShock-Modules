@@ -1,17 +1,26 @@
-import express, { Express, Response } from 'express';
 import bodyParser from 'body-parser';
-import logger from './logger';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import express, { Express } from 'express';
 import fs from 'fs';
 import path from 'path';
-import dotenv from 'dotenv';
-
+import logger from './logger';
 dotenv.config();
 
 const router: Express = express();
 
 router.use(bodyParser.json());
-
+router.use(cors());
 router.get('/api', (req, res) => {
+  const endpoints = {
+    v1: '/api/v1',
+  };
+
+  return res.status(200).json(endpoints);
+});
+
+//#region v1
+router.get('/api/v1', (req, res) => {
   const endpoints = {
     modules: '/api/v1/modules',
     moduleConfig: '/api/v1/module/:id/config',
@@ -161,6 +170,90 @@ router.get('/api/v1/module/:id/:item', async (req, res) => {
 
   res.sendFile(filePath);
 });
+
+//#endregion
+
+//#region v2
+
+router.get('/api/v2', (req, res) => {
+  const endpoints = {
+    modules: '/api/v2/modules',
+    module: '/api/v2/module/:id',
+    moduleItem: '/api/v2/module/:id/:item',
+  };
+
+  return res.status(200).json(endpoints);
+});
+
+router.get('/api/v2/modules', async (req, res) => {
+  const modulesDir = path.join(__dirname, '..', 'modules');
+  const modules = fs.readdirSync(modulesDir)
+    .filter(file => fs.statSync(path.join(modulesDir, file)).isDirectory())
+    .map(module => {
+      const configPath = path.join(modulesDir, module, 'config.json');
+      if (fs.existsSync(configPath)) {
+        const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+        return {
+          name: module,
+          description: config.description,
+          author: config.author
+        };
+      } else {
+        return {
+          name: module,
+          description: 'No description available',
+          author: 'Unknown'
+        };
+      }
+    });
+
+  return res.status(200).json(modules);
+});
+
+router.get('/api/v2/module/:id', async (req, res) => {
+  const module = req.params.id as string;
+
+  if (!module) {
+    return res.status(400).json({ result: false });
+  }
+
+  const moduleDir = path.join(__dirname, '..', 'modules', module);
+  const configPath = path.join(moduleDir, 'config.json');
+
+  if (!fs.existsSync(configPath)) {
+    return res.status(404).json({ result: false, message: 'Module not found' });
+  }
+
+  const config = require(configPath);
+  const files = fs.readdirSync(moduleDir);
+
+  const imageFiles = files.filter(file => {
+    const extname = path.extname(file).toLowerCase();
+    return extname === '.jpg' || extname === '.jpeg' || extname === '.png';
+  });
+
+  return res.status(200).json({ config, images: imageFiles });
+});
+
+router.get('/api/v2/module/:id/:item', async (req, res) => {
+  const module = req.params.id as string;
+  const item = req.params.item as string;
+
+  if (!module || !item) {
+    return res.status(400).json({ result: false, message: 'Invalid module or item' });
+  }
+
+  const moduleFolderPath = path.join(__dirname, '..', 'modules', module);
+  const filePath = path.join(moduleFolderPath, item);
+
+  if (!fs.existsSync(filePath)) {
+    return res.status(404).json({ result: false, message: 'File not found' });
+  }
+
+  res.sendFile(filePath);
+});
+
+//#endregion
 
 const PORT = process.env.PORT || 3000;
 
