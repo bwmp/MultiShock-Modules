@@ -8,7 +8,7 @@ export default component$(() => {
   const module_info = useResource$(async ({ cleanup }) => {
     const abortController = new AbortController();
     cleanup(() => abortController.abort('cleanup'));
-    const res = await fetch(`http://localhost:3000/api/v2/module/${id}`, {
+    const res = await fetch(`https://multishock.akiradev.me/api/v2/module/${id}`, {
       signal: abortController.signal,
     });
     const data = await res.json();
@@ -34,7 +34,7 @@ export default component$(() => {
             <div>
               Images:
               {module_info.images.map((image: string) => (
-                <img key={image} src={`http://localhost:3000/api/v2/module/${id}/${image}`} alt={image} width="250" height="250" />
+                <img key={image} src={`https://multishock.akiradev.me/api/v2/module/${id}/${image}`} alt={image} width="250" height="250" />
               ))}
             </div>
           </>;
