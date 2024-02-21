@@ -1,21 +1,43 @@
 {
   "author": "AkiraDev",
   "description": "This Module will shock you for if you die OR if your entire team dies!",
-  "enabled": true,
+  "enabled": false,
   "images": {
-    "Team_Death.png": {
-      "enabled": true,
-      "intensity": 20.0,
-      "duration": 1.0,
-      "threshold": 0.7,
-      "cooldown": 30.0
-    },
-    "Death.png": {
-      "enabled": true,
-      "intensity": 30.0,
-      "duration": 2.0,
-      "threshold": 0.8,
-      "cooldown": 20.0
-    }
+      "Team_Death.png": {
+          "enabled": true,
+          "intensity": 20.0,
+          "duration": 2.0,
+          "threshold": 0.7,
+          "cooldown": "30",
+          "sections": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1
+          ]
+      },
+      "Death.png": {
+          "enabled": true,
+          "intensity": 15.0,
+          "duration": 2.0,
+          "threshold": 0.7,
+          "cooldown": "30",
+          "sections": [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1,
+              1
+          ]
+      }
   }
 }

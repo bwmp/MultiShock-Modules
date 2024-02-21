@@ -95,8 +95,7 @@ router.get('/api/v1/module/:id/download', async (req, res) => {
     return res.status(404).json({ result: false, message: 'Module not found' });
   }
 
-  const config = require(configPath);
-
+  const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
   const files = fs.readdirSync(moduleFolderPath);
 
   const imageFiles = files.filter(file => {
