@@ -19,7 +19,8 @@ export default component$(() => {
             </h2>
             <p class="text-gray-200 sm:text-lg">
               Multishock is a program that lets you use image detection to recognize text, images, icons, etc on your screen and allow them to shock you!<br />
-              This can be used to detect when you die, lose a round, and so much more!
+              This can be used to detect when you die, lose a round, and so much more!<br />
+              This program requires a <a href="https://pishock.com/#/" class="text-blue-400 hover:underline">PiShock</a> to work.
             </p>
             <p class="text-gray-200 sm:text-lg">
               For guides on how to setup MultiShock, create modules, and more please see<a href="/guides" class="text-blue-400 hover:underline"> this page</a><br />
