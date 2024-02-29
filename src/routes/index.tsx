@@ -47,11 +47,6 @@ export default component$(() => {
         </div>
       </div>
     </section>
-    <section id="info" class="flex mx-auto py-16 items-center justify-center bg-gray-800">
-      <div class="justify-center flex relative align-center max-w-4xl px-10">
-
-      </div>
-    </section>
   </>;
 });
 
