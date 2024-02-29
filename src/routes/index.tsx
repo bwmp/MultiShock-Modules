@@ -13,7 +13,19 @@ export default component$(() => {
           <h1 class="text-gray-100 text-3xl sm:text-6xl font-bold fade-in animation-delay-200">
             MultiShock Modules
           </h1>
-          <div class="flex flex-col gap-2 mt-8 fade-in animation-delay-400">
+          <div class="flex flex-col gap-4 fade-in animation-delay-300">
+            <h2 class="text-gray-100 text-3xl sm:text-5xl font-bold mb-4 text-center">
+              What is Multishock?
+            </h2>
+            <p class="text-gray-200 sm:text-lg">
+              Multishock is a program that lets you use image detection to recognize text, images, icons, etc on your screen and allow them to shock you!<br />
+              This can be used to detect when you die, lose a round, and so much more!
+            </p>
+            <p class="text-gray-200 sm:text-lg">
+              For guides on how to setup MultiShock, create modules, and more please see<a href="/guides" class="text-blue-400 hover:underline"> this page</a><br />
+            </p>
+          </div>
+          <div class="flex flex-col gap-2 mt-8 fade-in animation-delay-600">
             <div class="flex flex-col sm:flex-row gap-2 justify-center">
               <Link href="/guides">
                 <Button color="purple" size="xl">
@@ -31,27 +43,13 @@ export default component$(() => {
                 </Button>
               </Link>
             </div>
-            <h2 class="text-gray-100 text-3xl sm:text-5xl font-bold mb-4 text-center">
-              Scroll for more info
-            </h2>
           </div>
         </div>
       </div>
     </section>
-    <section id="info"  class="flex mx-auto py-16 items-center justify-center bg-gray-800">
+    <section id="info" class="flex mx-auto py-16 items-center justify-center bg-gray-800">
       <div class="justify-center flex relative align-center max-w-4xl px-10">
-        <div class="flex flex-col gap-4">
-          <h2 class="text-gray-100 text-3xl sm:text-5xl font-bold mb-4 text-center">
-            What is Multishock?
-          </h2>
-          <p class="text-gray-200 sm:text-lg">
-            Multishock lets you use image decetion to recognize text, images, icons, etc on your screen and allow them to shock you!<br />
-            This can be used to detect when you die, lose a round, and so much more!
-          </p>
-          <p class="text-gray-200 sm:text-lg">
-            For guides on how to setup MultiShock, create modules, and more please see<a href="/guides" class="text-blue-400 hover:underline"> this page</a><br />
-          </p>
-        </div>
+
       </div>
     </section>
   </>;
