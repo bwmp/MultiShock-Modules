@@ -58,7 +58,7 @@ export default component$(() => {
             This is a community made modules for different games and applications to use with Multishock!
           </p>
           <p class="font-normal text-xl">
-            Want to contribute? Check out the <a href="/submit">submit page</a>!
+            Want to contribute? Check out the <a href="/submit" class="text-blue-400 hover:underline">submit page</a>!
           </p>
           <TextInput placeholder='Search Term' id="searchTerm" onInput$={(event: any) => (store.searchQuery = event.target.value)}>
           </TextInput>

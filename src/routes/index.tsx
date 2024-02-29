@@ -21,7 +21,26 @@ export default component$(() => {
                 <CubeOutline width="30" class="text-3xl" /> Modules
               </Link>
             </div>
+            <h2 class="text-gray-100 text-3xl sm:text-5xl font-bold mb-4 text-center">
+              Scroll for more info
+            </h2>
           </div>
+        </div>
+      </div>
+    </section>
+    <section class="flex mx-auto py-16 items-center justify-center bg-gray-800">
+      <div class="justify-center flex relative align-center max-w-4xl px-10">
+        <div class="flex flex-col gap-4">
+          <h2 class="text-gray-100 text-3xl sm:text-5xl font-bold mb-4 text-center">
+            What is Multishock?
+          </h2>
+          <p class="text-gray-200 sm:text-lg">
+            Multishock lets you use image decetion to recognize text, images, icons, etc on your screen and allow them to shock you!<br />
+            This can be used to detect when you die, lose a round, and so much more!
+          </p>
+          <p class="text-gray-200 sm:text-lg">
+            For guides on how to setup MultiShock, create modules, and more please see<a href="/guides" class="text-blue-400 hover:underline"> this page</a><br />
+          </p>
         </div>
       </div>
     </section>
