@@ -1,7 +1,8 @@
 import { component$ } from '@builder.io/qwik';
 import { Link, type DocumentHead } from '@builder.io/qwik-city';
+import { Button } from '@luminescent/ui';
 
-import { CashOutline, CubeOutline } from 'qwik-ionicons';
+import { BookOutline, CashOutline, CubeOutline } from 'qwik-ionicons';
 
 export default component$(() => {
 
@@ -14,11 +15,20 @@ export default component$(() => {
           </h1>
           <div class="flex flex-col gap-2 mt-8 fade-in animation-delay-400">
             <div class="flex flex-col sm:flex-row gap-2 justify-center">
-              <a href="https://paypal.me/akiradev" class="flex transition ease-in-out rounded-xl shadow-lg backdrop-blur-lg bg-pink-900/80 hover:bg-pink-700 px-6 py-3 text-pink-100 md:py-4 md:px-8 text-sm md:text-lg whitespace-nowrap gap-5 items-center">
-                <CashOutline width="30" class="text-3xl" /> Donate
+              <Link href="/guides">
+                <Button color="purple" size="xl">
+                  <BookOutline width="30" class="text-3xl" /> Guides
+                </Button>
+              </Link>
+              <a href="https://paypal.me/akiradev">
+                <Button color="pink" size="xl">
+                  <CashOutline width="30" class="text-3xl" /> Donate
+                </Button>
               </a>
-              <Link href="/modules" class="flex transition ease-in-out rounded-xl shadow-lg backdrop-blur-lg bg-purple-700/80 hover:bg-purple-700 px-6 py-3 text-pink-100 md:py-4 md:px-8 text-sm md:text-lg whitespace-nowrap gap-5 items-center">
-                <CubeOutline width="30" class="text-3xl" /> Modules
+              <Link href="/modules">
+                <Button color="red" size="xl">
+                  <CubeOutline width="30" class="text-3xl" /> Modules
+                </Button>
               </Link>
             </div>
             <h2 class="text-gray-100 text-3xl sm:text-5xl font-bold mb-4 text-center">
@@ -28,7 +38,7 @@ export default component$(() => {
         </div>
       </div>
     </section>
-    <section class="flex mx-auto py-16 items-center justify-center bg-gray-800">
+    <section id="info"  class="flex mx-auto py-16 items-center justify-center bg-gray-800">
       <div class="justify-center flex relative align-center max-w-4xl px-10">
         <div class="flex flex-col gap-4">
           <h2 class="text-gray-100 text-3xl sm:text-5xl font-bold mb-4 text-center">
