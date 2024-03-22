@@ -1,6 +1,6 @@
 import { component$ } from '@builder.io/qwik';
 import { type DocumentHead } from '@builder.io/qwik-city';
-import { Card, Header } from '@luminescent/ui';
+import { Button, Card, Header } from '@luminescent/ui';
 
 export default component$(() => {
 
@@ -10,40 +10,24 @@ export default component$(() => {
         Guides
       </div>
       <Card>
-        <Header id="Virus">
-          Download marked as a virus
+        <Header>
+          v2 Guides (Deprecated Soon)
         </Header>
-        <video controls>
-          <source src="https://projects.akiradev.me/MultiShock/MarkedAsVirus.mp4" type='video/mp4' />
-        </video>
+        <a href="/guides/v2">
+          <Button color="pink" size="xl">
+            View
+          </Button>
+        </a>
       </Card>
       <Card>
-        <Header id="Setup">
-          Setup
+        <Header>
+          v3 Guides
         </Header>
-        <video controls>
-          <source src="https://projects.akiradev.me/MultiShock/Setup.mp4" type='video/mp4' />
-        </video>
-        <ul class="list-decimal">
-          <li>Download the EXE from <a href="https://github.com/bwmp/MultiShock/releases/latest" class="text-blue-400 hover:underline">Here</a></li>
-          <li>Run the EXE</li>
-          <li>Click <span class="font-bold">CONFIG</span> button in the GUI</li>
-          <li>Go to the <a href="https://pishock.com/#/account" class="text-blue-400 hover:underline">PiShock Account Page</a></li>
-          <li>Get Your username and api key and enter them in the first 2 fields of the config window</li>
-          <li>select the monitor you want the application to check (i highly suggest not selecting all as it will massively impact performance)</li>
-          <li>Click the Add Shocker button</li>
-          <li>Go to <a href="https://pishock.com/#/account" class="text-blue-400 hover:underline">Shocker Control Page</a>, Click share on a shocker, Click CODE, Then copy the code and paste it in the Share Code input for the shocker</li>
-          <li>Finally click save and you're done!</li>
-        </ul>
-      </Card>
-      <Card>
-        <Header id="Create">
-          Creating a module
-        </Header>
-        <video controls>
-          <source src="https://projects.akiradev.me/MultiShock/CreateAModule.mp4" type='video/mp4' />
-        </video>
-        I really dont wanna write out a tutorial for this so uhh just watch the video and dm me any questions thx &lt;3
+        <a href="/guides/v3">
+          <Button color="pink" size="xl">
+            View
+          </Button>
+        </a>
       </Card>
     </section>
   </>;

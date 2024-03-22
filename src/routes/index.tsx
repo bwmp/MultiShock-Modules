@@ -9,8 +9,8 @@ export default component$(() => {
   return <>
     <section class="flex mx-auto max-w-7xl px-6 items-center justify-center min-h-[calc(100dvh-56px)]">
       <div class="text-center justify-center flex relative align-center w-full">
-        <div class="flex flex-col gap-2 sm:gap-6 w-full px-4">
-          <h1 class="text-gray-100 text-3xl sm:text-6xl font-bold fade-in animation-delay-200">
+        <div class="flex flex-col gap-2 sm:gap-6 w-full px-4 fade-in animation-delay-200">
+          <h1 class="text-gray-100 text-3xl sm:text-6xl font-bold">
             MultiShock Modules
           </h1>
           <div class="flex flex-col gap-4 fade-in animation-delay-300">
@@ -26,7 +26,7 @@ export default component$(() => {
               For guides on how to setup MultiShock, create modules, and more please see<a href="/guides" class="text-blue-400 hover:underline"> this page</a><br />
             </p>
           </div>
-          <div class="flex flex-col gap-2 mt-8 fade-in animation-delay-600">
+          <div class="flex flex-col gap-2 mt-8 fade-in animation-delay-500">
             <div class="flex flex-col sm:flex-row gap-2 justify-center">
               <Link href="/guides">
                 <Button color="purple" size="xl">
