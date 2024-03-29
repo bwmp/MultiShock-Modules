@@ -73,11 +73,11 @@ export default component$(() => {
             const visibleModules = sortedModules.slice(startIndex, endIndex);
             return (
               <>
-                <div class="pb-5">
-                  <h1>
+                <div class="flex flex-col items-center justify-center pb-5">
+                  <h1 class="text-center pb-5">
                     {`Page: ${store.page} of ${totalPages}`}
                   </h1>
-                  <NumberInput min={1} max={totalPages} id="NumberInput" class={{ 'pb-5': true }}
+                  <NumberInput min={1} max={totalPages} id="NumberInput"
                     onInput$={(event: any) => {
                       store.page = event.target.value;
                     }}
@@ -112,8 +112,8 @@ export default component$(() => {
                     })
                   }
                 </div>
-                <div class="pt-5">
-                  <NumberInput min={1} max={totalPages} id="NumberInput" class={{ 'pb-5': true }}
+                <div class="flex flex-col items-center justify-center pt-5">
+                  <NumberInput min={1} max={totalPages} id="NumberInput"
                     onInput$={(event: any) => {
                       store.page = event.target.value;
                     }}
@@ -128,9 +128,8 @@ export default component$(() => {
                         store.page -= 1;
                       }
                     }}
-                  >
-                  </NumberInput>
-                  <h1>
+                  />
+                  <h1 class="text-center pt-5">
                     {`Page: ${store.page} of ${totalPages}`}
                   </h1>
                 </div>

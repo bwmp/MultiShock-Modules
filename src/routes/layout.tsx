@@ -1,7 +1,7 @@
 import { component$, Slot } from '@builder.io/qwik';
 import { Link } from '@builder.io/qwik-city';
 import { Button, LogoDiscord, Nav } from '@luminescent/ui';
-import { CubeOutline, LogoGithub } from 'qwik-ionicons';
+import { BookOutline, CubeOutline, LogoGithub } from 'qwik-ionicons';
 import Footer from '~/components/Footer';
 export default component$(() => {
 
@@ -11,6 +11,18 @@ export default component$(() => {
         <Link q:slot='start' href='/'>
           <Button color='transparent'>
               MultiShock
+          </Button>
+        </Link>
+        <Link q:slot="end" href="/guides" class={{
+          'hidden sm:flex': true,
+        }}>
+          <Button color="transparent">
+            <BookOutline width="24" /> Guides
+          </Button>
+        </Link>
+        <Link q:slot="mobile" href="/guides">
+          <Button color="transparent">
+            <BookOutline width="24" /> Guides
           </Button>
         </Link>
         <Link q:slot="end" href="/modules" class={{

@@ -26,8 +26,8 @@ export default component$(() => {
               For guides on how to setup MultiShock, create modules, and more please see<a href="/guides" class="text-blue-400 hover:underline"> this page</a><br />
             </p>
           </div>
-          <div class="flex flex-col gap-2 mt-8 fade-in animation-delay-500">
-            <div class="flex flex-col sm:flex-row gap-2 justify-center">
+          <div class="flex flex-col flex-wrap justify-center gap-2 mt-8 fade-in animation-delay-500">
+            <div class="flex flex-wrap justify-center gap-2">
               <Link href="/guides">
                 <Button color="purple" size="xl">
                   <BookOutline width="30" class="text-3xl" /> Guides
@@ -38,11 +38,18 @@ export default component$(() => {
                   <CashOutline width="30" class="text-3xl" /> Donate
                 </Button>
               </a>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2">
               <Link href="/modules">
                 <Button color="red" size="xl">
                   <CubeOutline width="30" class="text-3xl" /> Modules
                 </Button>
               </Link>
+              <a href="https://github.com/bwmp/multishock/releases/latest">
+                <Button color="blue" size="xl">
+                  <CubeOutline width="30" class="text-3xl" /> Download Latest
+                </Button>
+              </a>
             </div>
           </div>
         </div>
