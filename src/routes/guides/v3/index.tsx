@@ -55,7 +55,7 @@ export default component$(() => {
         <ul class="list-decimal">
           <li>Create browser source in OBS</li>
           <li>Set width to 200 and height to 600 (or whatever you want)</li>
-          <li>Set the URL to http://localhost:8000/#/?obs=true</li>
+          <li>Set the URL to http://localhost:5142/#/?obs=true</li>
           <li>Set the Custom CSS to the text below</li>
         </ul>
         <code>
