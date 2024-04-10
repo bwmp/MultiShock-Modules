@@ -1,6 +1,9 @@
 import { component$ } from '@builder.io/qwik';
 import { useDocumentHead, useLocation } from '@builder.io/qwik-city';
 
+// @ts-ignore
+import iconWEBP from '~/images/logo.png?height=96&webp';
+
 /**
  * The RouterHead component is placed inside of the document `<head>` element.
  */
@@ -11,18 +14,11 @@ export const RouterHead = component$(() => {
   return (
     <>
       <title>{`MultiShock: ${head.title}`}</title>
+      <link rel="canonical" href={loc.url.href} />
+      <link rel="icon" href={iconWEBP} />
+      <meta content={iconWEBP} property="og:image" />
       <meta content={`MultiShock: ${head.title}`} property="og:title"/>
       <meta content="#54a5da" name="theme-color"/>
-      <meta content="/icon-512x512.png" property="og:image" />
-
-      <link rel="preload" as="font" href="/fonts/MinecraftRegular.otf" crossOrigin="anonymous" />
-      <link rel="preload" as="font" href="/fonts/MinecraftBold.otf" crossOrigin="anonymous" />
-      <link rel="preload" as="font" href="/fonts/MinecraftItalic.otf" crossOrigin="anonymous" />
-      <link rel="preload" as="font" href="/fonts/MinecraftBoldItalic.otf" crossOrigin="anonymous" />
-
-      <link rel="canonical" href={loc.url.href} />
-      <link rel="icon" type="image/png" href="/apple-icon.png" />
-      <link rel="apple-touch-icon" href="/apple-icon.png" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       {head.meta.map((m, i) => (

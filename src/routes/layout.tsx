@@ -1,16 +1,30 @@
 import { component$, Slot } from '@builder.io/qwik';
-import { Link } from '@builder.io/qwik-city';
-import { Button, LogoDiscord, Nav } from '@luminescent/ui';
+import { Link, useLocation } from '@builder.io/qwik-city';
+import { Button, LoadingIcon, LogoDiscord, Nav } from '@luminescent/ui';
 import { BookOutline, CubeOutline, LogoGithub } from 'qwik-ionicons';
 import Footer from '~/components/Footer';
-export default component$(() => {
 
+import Logo from '~/images/logo.png?jsx';
+
+export default component$(() => {
+  const loc = useLocation();
   return (
     <>
       <Nav fixed >
-        <Link q:slot='start' href='/'>
-          <Button color='transparent'>
-              MultiShock
+        <Link q:slot="start" href="/">
+          <Button color="transparent" size="sm">
+            <div class="relative w-12">
+              <Logo class="pb-2 w-3/4 mx-auto" />
+            </div>
+            <p class="font-medium">
+              Multishock
+            </p>
+            <div class={{
+              'transition-all': true,
+              '-ml-6 opacity-0': !loc.isNavigating,
+            }}>
+              <LoadingIcon width={16} speed="0.4s" />
+            </div>
           </Button>
         </Link>
         <Link q:slot="end" href="/guides" class={{
