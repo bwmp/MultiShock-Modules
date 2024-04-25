@@ -63,7 +63,7 @@ export default component$(() => {
             <LogoGithub width="24" /> Github
           </Button>
         </Link>
-        <Link q:slot="end" href="https://discord.gg/EQmGcKCNyp" class={{
+        <Link q:slot="end" href="https://discord.gg/pishock" class={{
           'hidden sm:flex': true,
         }}>
           <Button color="transparent">
