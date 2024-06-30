@@ -29,6 +29,16 @@ export default component$(() => {
           </Button>
         </a>
       </Card>
+      <Card>
+        <Header>
+          Stream Tools
+        </Header>
+        <a href="/guides/StreamTools">
+          <Button color="pink" size="xl">
+            View
+          </Button>
+        </a>
+      </Card>
     </section>
   </>;
 });
