@@ -45,7 +45,7 @@ export default component$(() => {
                   <CubeOutline width="30" class="text-3xl" /> Modules
                 </Button>
               </Link>
-              <a href="https://github.com/bwmp/multishock/releases/latest">
+              <a href="https://github.com/PiShock-Inc/MultiShock/releases/latest">
                 <Button color="blue" size="xl">
                   <CubeOutline width="30" class="text-3xl" /> Download Latest
                 </Button>
