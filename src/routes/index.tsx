@@ -13,14 +13,15 @@ export default component$(() => {
           <h1 class="text-gray-100 text-3xl sm:text-6xl font-bold">
             MultiShock Modules
           </h1>
-          <div class="flex flex-col gap-4 fade-in animation-delay-300">
+          <div class="flex flex-col gap-4 fade-in animation-delay-300 ">
             <h2 class="text-gray-100 text-3xl sm:text-5xl font-bold mb-4 text-center">
               What is Multishock?
             </h2>
             <p class="text-gray-200 sm:text-lg">
-              Multishock is a program that lets you use image detection to recognize text, images, icons, etc on your screen and allow them to shock you!<br />
-              This can be used to detect when you die, lose a round, and so much more!<br />
-              This program requires a <a href="https://pishock.com/#/" class="text-blue-400 hover:underline">PiShock</a> to work.
+              Multishock is the official PiShock Desktop Application to allow for a variety of integrations fitting various needs.<br />
+              Be it image detection, OSC, websocket or streaming.<br />
+              Now it replaces the old stream tools, allowing for more features.<br />
+              Note: A <a href="https://pishock.com/#/" class="text-blue-400 hover:underline">PiShock</a> device is required to use this program.
             </p>
             <p class="text-gray-200 sm:text-lg">
               For guides on how to setup MultiShock, create modules, and more please see<a href="/guides" class="text-blue-400 hover:underline"> this page</a><br />
