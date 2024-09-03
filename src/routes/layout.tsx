@@ -51,14 +51,14 @@ export default component$(() => {
             <CubeOutline width="24" /> Modules
           </Button>
         </Link>
-        <Link q:slot="end" href="https://github.com/bwmp/MultiShock" class={{
+        <Link q:slot="end" href="https://github.com/PiShock-Inc/MultiShock" class={{
           'hidden sm:flex': true,
         }}>
           <Button color="transparent">
             <LogoGithub width="24" /> Github
           </Button>
         </Link>
-        <Link q:slot="mobile" href="https://github.com/bwmp/MultiShock">
+        <Link q:slot="mobile" href="https://github.com/PiShock-Inc/MultiShock">
           <Button color="transparent">
             <LogoGithub width="24" /> Github
           </Button>
@@ -70,7 +70,7 @@ export default component$(() => {
             <LogoDiscord width="24" /> Discord
           </Button>
         </Link>
-        <Link q:slot="mobile" href="https://discord.gg/EQmGcKCNyp">
+        <Link q:slot="mobile" href="https://discord.gg/pishock">
           <Button color="transparent">
             <LogoDiscord width="24" /> Discord
           </Button>
