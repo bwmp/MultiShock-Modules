@@ -11,9 +11,9 @@ export default component$(() => {
       </div>
       <Card>
         <Header>
-          v2 Guides (Deprecated Soon)
+          NEW GUIDES/DOCUMENTATION SITE
         </Header>
-        <a href="/guides/v2">
+        <a href="https://docs.pishock.com/multishock/multishock.html">
           <Button color="pink" size="xl">
             View
           </Button>
