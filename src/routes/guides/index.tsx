@@ -13,7 +13,7 @@ export default component$(() => {
         <Header>
           NEW GUIDES/DOCUMENTATION SITE
         </Header>
-        <a href="https://docs.pishock.com/multishock/multishock.html">
+        <a href="https://docs.pishock.com/multishock/%E2%9A%A1-multishock.html">
           <Button color="pink" size="xl">
             View
           </Button>
