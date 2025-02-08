@@ -1,0 +1,4 @@
+services:
+  web:
+    image: registry.digitalocean.com/nebula/multishock/web
+    build: .
