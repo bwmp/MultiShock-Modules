@@ -1,16 +1,31 @@
 version: '3.8'
 
 services:
-  app:
+  multishock-api:
     build: .
+    ports:
+      - "${PORT:-3000}:3000"
     environment:
-      - PORT=${PORT:-3000}
+      - NODE_ENV=production
+      - PORT=3000
     volumes:
-      - modules:/app/modules
+      - ./modules:/app/modules:ro
+      - ./logs:/app/logs
+      - uploads:/app/uploads
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://0.0.0.0:3000/"]
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api"]
       interval: 30s
       timeout: 10s
       retries: 3
-      start_period: 60s
+      start_period: 40s
     restart: unless-stopped
+    networks:
+      - multishock-network
+
+networks:
+  multishock-network:
+    driver: bridge
+
+volumes:
+  uploads:
+    driver: local
