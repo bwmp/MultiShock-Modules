@@ -3,15 +3,12 @@ version: '3.8'
 services:
   multishock-api:
     build: .
-    ports:
-      - "${PORT:-3000}:3000"
     environment:
       - NODE_ENV=production
       - PORT=3000
     volumes:
       - ./modules:/app/modules:ro
       - ./logs:/app/logs
-      - uploads:/app/uploads
     healthcheck:
       test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3000/api"]
       interval: 30s
@@ -25,7 +22,3 @@ services:
 networks:
   multishock-network:
     driver: bridge
-
-volumes:
-  uploads:
-    driver: local
