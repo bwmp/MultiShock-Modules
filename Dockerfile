@@ -10,4 +10,6 @@ RUN pnpm install
 
 COPY . .
 
+EXPOSE 3000
+
 CMD ["npx", "ts-node", "--transpileOnly", "src/index.ts"]
