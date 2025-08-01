@@ -13,10 +13,7 @@ const router: Express = express();
 router.set('trust proxy', true);
 
 router.use(bodyParser.json());
-router.use(cors({
-  origin: true,
-  credentials: true
-}));
+router.use(cors());
 
 // Root path for health checks and Coolify
 router.get('/', (req, res) => {
