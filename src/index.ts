@@ -9,8 +9,14 @@ dotenv.config();
 
 const router: Express = express();
 
+// Trust proxy for Coolify/reverse proxy setups
+router.set('trust proxy', true);
+
 router.use(bodyParser.json());
-router.use(cors());
+router.use(cors({
+  origin: true,
+  credentials: true
+}));
 
 // Root path for health checks and Coolify
 router.get('/', (req, res) => {
