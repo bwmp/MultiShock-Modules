@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon",
-    "start": "ts-node --transpileOnly src/index.ts"
+    "start": "ts-node --transpileOnly src/index.ts",
+    "build": "tsc"
   },
   "keywords": [],
   "author": "",
