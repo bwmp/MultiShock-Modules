@@ -13,4 +13,4 @@ RUN pnpm install
 ENV UPLOADS_DIR=/app/uploads
 ENV DATABASE_URL=file:/app/data/prod.db
 
-CMD ["ts-node", "--transpileOnly", "src/index.ts"]
+CMD ["node", "ts-node", "--transpileOnly", "src/index.ts"]
