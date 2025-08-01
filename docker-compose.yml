@@ -4,7 +4,7 @@ services:
   multishock-api:
     build: .
     ports:
-      - "5193:3000"
+      - "3000:3000"
     environment:
       - NODE_ENV=production
       - PORT=3000
