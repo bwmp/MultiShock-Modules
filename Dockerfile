@@ -14,6 +14,9 @@ RUN pnpm install
 # Copy source code
 COPY . .
 
+# Create modules directory that the API expects
+RUN mkdir -p /app/modules
+
 # Expose the port the app runs on
 EXPOSE 3000
 

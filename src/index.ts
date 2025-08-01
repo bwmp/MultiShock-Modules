@@ -11,6 +11,19 @@ const router: Express = express();
 
 router.use(bodyParser.json());
 router.use(cors());
+
+// Root path for health checks and Coolify
+router.get('/', (req, res) => {
+  return res.status(200).json({ 
+    status: 'ok', 
+    message: 'MultiShock Modules API',
+    endpoints: {
+      api: '/api',
+      modules: '/api/v1/modules'
+    }
+  });
+});
+
 router.get('/api', (req, res) => {
   const endpoints = {
     v1: '/api/v1',
@@ -33,10 +46,30 @@ router.get('/api/v1', (req, res) => {
 });
 
 router.get('/api/v1/modules', async (req, res) => {
-  const modules = fs.readdirSync(path.join(__dirname, '..', 'modules'))
-    .filter(file => fs.statSync(path.join(__dirname, '..', 'modules', file)).isDirectory());
+  try {
+    const modulesPath = path.join(__dirname, '..', 'modules');
+    logger.info(`Looking for modules in: ${modulesPath}`);
+    
+    if (!fs.existsSync(modulesPath)) {
+      logger.error(`Modules directory does not exist: ${modulesPath}`);
+      return res.status(500).json({ 
+        error: 'Modules directory not found',
+        path: modulesPath 
+      });
+    }
 
-  return res.status(200).json(modules);
+    const modules = fs.readdirSync(modulesPath)
+      .filter(file => fs.statSync(path.join(modulesPath, file)).isDirectory());
+
+    logger.info(`Found ${modules.length} modules: ${modules.join(', ')}`);
+    return res.status(200).json(modules);
+  } catch (error) {
+    logger.error(`Error reading modules: ${error}`);
+    return res.status(500).json({ 
+      error: 'Failed to read modules',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
 });
 
 router.get('/api/v1/module/:id/config', async (req, res) => {
