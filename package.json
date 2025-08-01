@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "nodemon",
-    "start": "git pull && pnpm i && ts-node --transpileOnly src/index.ts"
+    "start": "ts-node --transpileOnly src/index.ts"
   },
   "keywords": [],
   "author": "",
