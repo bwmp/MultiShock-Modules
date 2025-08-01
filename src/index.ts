@@ -256,4 +256,4 @@ router.get('/api/v2/module/:id/:item', async (req, res) => {
 
 const PORT = process.env.PORT || 3000;
 
-router.listen(PORT, () => logger.info(`API started on port ${PORT}`));
+router.listen(PORT, '0.0.0.0', () => logger.info(`API started on port ${PORT}`));
