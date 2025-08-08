@@ -4,15 +4,15 @@ services:
   multishock-api:
     build: .
     ports:
-      - "3000:3000"
+      - "5193:5193"
     environment:
       - NODE_ENV=production
-      - PORT=3000
+      - PORT=5193
     volumes:
       - ./logs:/app/logs
       - modules:/app/modules
     healthcheck:
-      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://0.0.0.0:3000/"]
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://0.0.0.0:5193/"]
       interval: 30s
       timeout: 10s
       retries: 3

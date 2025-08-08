@@ -290,6 +290,6 @@ router.get('/api/v2/module/:id/:item', async (req, res) => {
 
 //#endregion
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5193;
 
 router.listen(PORT, '0.0.0.0', () => logger.info(`API started on port ${PORT}`));

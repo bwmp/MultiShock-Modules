@@ -18,7 +18,7 @@ COPY . .
 RUN mkdir -p /app/modules
 
 # Expose the port the app runs on
-EXPOSE 3000
+EXPOSE 5193
 
 # Create a non-root user for security
 RUN addgroup -g 1001 -S nodejs
